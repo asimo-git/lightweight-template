@@ -8,46 +8,46 @@
   </head>
   <body>
     <header>
-      <!-- <nav>
-        <a href="#about">О нас</a>
+      <nav>
+        <a href="#price">Прайс-лист</a>
+        <a href="#about-me">Обо мне</a>
         <a href="#contact">Контакты</a>
-      </nav> -->
+      </nav>
     </header>
 
     <div class="banner">
-      <h1>Полина Гордо<br />ваш мастер маникюра</h1>
+      <h1 class="title">Полина Гордо</h1>
+
+      <h1 class="subtitle">ваш мастер маникюра</h1>
     </div>
 
     <main>
-      <div class="slogan">
+      <div class="slogan max-width">
         УХОЖЕННОСТЬ РУК - ЭТО 50% ВПЕЧАТЛЕНИЯ ОТ ВАШЕГО ОБРАЗА!
       </div>
 
-      <section class="about">
-        <h2>Наши услуги</h2>
-        <p>
-          Уютная студия в центре города. Качественная продукция как залог
-          идеальной процедуры.<br />Только проверенные марки, используемые
-          топ-стилистами мирового уровня.<br />Вся продукция сертифицирована и
-          соответсвует международным стандартам качества
-        </p>
-        <div class="container-row">
-          <div class="img-container">
-            <img src="./1.jpg" alt="example of manicure" />
-          </div>
-          <div class="img-container">
-            <img src="./2.jpg" alt="example of manicure" />
-          </div>
-          <div class="img-container">
-            <img src="./3.jpg" alt="example of manicure" />
-          </div>
-          <div class="img-container">
-            <img src="./4.jpg" alt="example of manicure" />
+      <section class="about container-row max-width">
+        <ul class="text-leftside item marklist">
+          <li>Уютная студия в центре города</li>
+          <li>Качественная продукция как залог идеальной процедуры</li>
+          <li>
+            Только проверенные марки, используемые топ-стилистами мирового
+            уровня
+          </li>
+          <li>
+            Вся продукция сертифицирована и соответсвует международным
+            стандартам качества
+          </li>
+        </ul>
+        <div class="materials-img item element-animation">
+          <img src="materials.jpg" alt="Лаки для ногтей" />
+          <div class="stamp">
+            <img src="stamp.png" alt="знак качества" />
           </div>
         </div>
       </section>
 
-      <section class="price-list">
+      <section id="price" class="price-list max-width">
         <h2 class="price-list__title">Прайс-лист</h2>
         <ul class="price-list__items">
           <li class="price-list__item">
@@ -94,7 +94,7 @@
         <h3>Окончательная стоимость услуги определяется мастером</h3>
       </section>
 
-      <section class="about-me">
+      <section id="about-me" class="about-me max-width element-animation">
         <div class="img-master">
           <img src="./master.jpg" alt="Photo of the master" />
         </div>
@@ -110,14 +110,40 @@
         </div>
       </section>
 
-      <section>
+      <section class="max-width">
         <h2>Галерея работ</h2>
+        <div class="container-row element-animation">
+          <div class="img-container">
+            <img src="1.jpg" alt="example of manicure" />
+          </div>
+          <div class="img-container">
+            <img src="2.jpg" alt="example of manicure" />
+          </div>
+          <div class="img-container">
+            <img src="3.jpg" alt="example of manicure" />
+          </div>
+          <div class="img-container">
+            <img src="4.jpg" alt="example of manicure" />
+          </div>
+          <div class="img-container">
+            <img src="5.jpg" alt="example of manicure" />
+          </div>
+          <div class="img-container">
+            <img src="6.jpg" alt="example of manicure" />
+          </div>
+          <div class="img-container">
+            <img src="7.jpg" alt="example of manicure" />
+          </div>
+          <div class="img-container">
+            <img src="8.jpg" alt="example of manicure" />
+          </div>
+        </div>
       </section>
 
-      <section class="contact">
-        <h2>Контакты</h2>
+      <section id="contact" class="contact">
+        <h2 class="max-width">Контакты</h2>
 
-        <div>
+        <div class="max-width">
           <p>
             Студия находится по адресу: г. Курск, ул. Гоголя 18 (вход с торца
             здания)
@@ -128,7 +154,7 @@
             <b>Время работы: </b> пн.-сб. 9:30 - 20:00, вс. 9:30 - 19:00
             <br /><b>Телеграм для записи: </b
             ><a href="https://web.telegram.org/">@Polina_nail_master</a> <br />
-            - присылайте свои идеи и примеры дизайна!
+            присылайте свои идеи и примеры дизайна!
           </p>
         </div>
         <div>
@@ -148,7 +174,8 @@
       <div class="logo">
         <img src="icons/flower.svg" class="logo" />
       </div>
-      <h2>Nail Art Studio</h2>
+      <div class="name">Полина Гордо</div>
+      <!-- <h2>Nail Art Studio</h2> -->
       <div class="container-row">
         <a
           href="https://twitter.com"
@@ -184,6 +211,20 @@
         </a>
       </div>
     </footer>
+    <button
+      aria-label="Scroll to top button"
+      class="scroll-button"
+      id="scroll-button"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="22"
+        height="22"
+        viewBox="0 0 32 32"
+      >
+        <path class="scroll-to-top-btn-icon" d="M30,22.656l-14-13-14,13"></path>
+      </svg>
+    </button>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

@@ -1,21 +1,40 @@
 import "./style.css";
 
-// document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-//   <div>
-//     <a href="https://vite.dev" target="_blank">
-//       <img src="${viteLogo}" class="logo" alt="Vite logo" />
-//     </a>
-//     <a href="https://www.typescriptlang.org/" target="_blank">
-//       <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-//     </a>
-//     <h1>Vite + TypeScript</h1>
-//     <div class="card">
-//       <button id="counter" type="button"></button>
-//     </div>
-//     <p class="read-the-docs">
-//       Click on the Vite and TypeScript logos to learn more
-//     </p>
-//   </div>
-// `
+const scrollButton = document.getElementById("scroll-button");
 
-// setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+window.addEventListener("scroll", () => {
+  if (scrollButton) {
+    if (window.scrollY > 200) {
+      scrollButton.classList.add("show-scroll-button");
+    } else {
+      scrollButton.classList.remove("show-scroll-button");
+    }
+  }
+});
+
+scrollButton &&
+  scrollButton.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+
+function onEntry(entry) {
+  entry.forEach((change) => {
+    console.log(change.target);
+    if (change.isIntersecting) {
+      change.target.classList.add("element-show");
+    }
+  });
+}
+
+let observer = new IntersectionObserver(onEntry, {
+  threshold: [0.1],
+  rootMargin: "100px",
+});
+let elements = document.querySelectorAll(".element-animation");
+for (let elm of elements) {
+  console.log("obs", elm);
+  observer.observe(elm);
+}
