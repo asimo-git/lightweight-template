@@ -8,6 +8,12 @@
   src: url("/fonts/Kurale-Regular.ttf") format("truetype");
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -32,7 +38,6 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  box-sizing: border-box;
 }
 
 a {
@@ -54,6 +59,7 @@ h1 {
 
 h2 {
   font-size: 2em;
+  margin-top: 0;
 }
 
 img {
@@ -143,6 +149,7 @@ main {
 
 .max-width {
   max-width: 1280px;
+  width: 100%;
   padding: 1rem;
   margin: 0 auto;
 }
@@ -155,6 +162,7 @@ main {
 .about .item {
   flex: 1 1 300px;
   position: relative;
+  align-self: flex-start;
 }
 
 .materials-img {
@@ -165,6 +173,7 @@ main {
 
 .marklist {
   list-style-image: url("icons/flower-mark.svg");
+  margin: 0;
 }
 
 .marklist li {
@@ -174,15 +183,17 @@ main {
 
 .stamp {
   position: absolute;
-  left: -62.1px;
-  top: -58px;
-  width: 147px;
+  left: -2.8rem;
+  top: -2.8rem;
+  width: 6rem;
   animation: circular-rotation 12000ms infinite linear;
 }
 
 .price-list {
-  max-width: 1000px;
+  max-width: 800px;
   width: 100%;
+  margin: 0 auto;
+  padding: 0;
 }
 
 .price-list__item {
@@ -190,13 +201,12 @@ main {
   display: flex;
   align-items: center;
   height: 95px;
-  font-size: 1.3rem;
 }
 
 .price-icon {
   border-radius: 50%;
-  width: 80px;
-  height: 80px;
+  width: 3rem;
+  height: 3rem;
 
   margin-right: 20px;
 }
@@ -228,7 +238,7 @@ main {
 
 .img-container {
   flex: 1 1 auto;
-  max-width: 23%;
+  max-width: 10rem;
   aspect-ratio: 1 / 1;
   box-shadow: 0 0 25px rgba(24, 24, 24, 0.1);
   transition: 300ms ease all;
@@ -247,19 +257,23 @@ main {
   width: 100%;
   background-color: var(--main-color);
   display: flex;
-  margin-top: 4rem;
+  /* margin-top: 4rem; */
   padding: 0.5rem;
 }
 
 .about-me .img-master {
-  margin: -3rem 2rem 3rem;
-  height: 500px;
-  width: fit-content;
+  /* margin: -3rem 2rem 3rem; */
+  flex: 1;
+  min-width: 200px;
+}
+
+.about-text {
+  flex: 2;
 }
 
 .img-master img {
-  display: block;
-  width: auto;
+  width: 100%;
+  height: auto;
 }
 
 footer {
@@ -296,8 +310,8 @@ footer .name {
 }
 
 .social-link {
-  width: 1rem;
-  height: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
   background-color: var(--accent-color);
   border-radius: 50%;
   padding: 0.4rem;
@@ -352,4 +366,23 @@ footer .name {
 .element-show {
   opacity: 1;
   transform: translateX(0);
+}
+
+@media (max-width: 720px) {
+  .slogan {
+    font-size: 1.5rem;
+  }
+
+  .img-container {
+    max-width: 40%;
+  }
+}
+
+@media (max-width: 450px) {
+  :root {
+    font-size: 20px;
+  }
+  .img-container {
+    max-width: 100%;
+  }
 }
